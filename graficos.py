@@ -67,6 +67,7 @@ def grafico_mapa(df):
         lon='LONGITUDE',
         zoom=11,
         height=800,
+        color_discrete_sequence=['black']  # todos os pontos na cor preta
         
     )
     fig3.update_layout(
