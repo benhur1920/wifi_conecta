@@ -56,23 +56,24 @@ figura_bairro = grafico_bairro(df_filtrado)
 fig_mapa = grafico_mapa(df_filtrado)
 
 # Criar as abas para navegacao do projeto
+
 aba1, aba2 = st.tabs(['📄 Conecta wifi', '📊 Dashboards'])
 
 with aba1:
     col1, col2 = st.columns([1, 2])  # proporção da largura das colunas
 
     with col1:
-        st.image("images/wifi.png", width=700)  # define o tamanho da imagem em pixels
+        st.image("images/wifi.png", width=600)  # define o tamanho da imagem em pixels
 
     with col2:
         st.markdown(
         f"""
         <div style="text-align: center; margin: 80px; color: #0b3d91;">
         <h1>Rede de internet gratuita em Recife</h1>
-            <p style="font-size: 30px;">
+            <p style="font-size: 20px;">
             A Prefeitura do Recife leva internet gratuita para todas as regiões da cidade, são <b>{totalWifi} </b> pontos de acesso distribuídos  pelos seus  bairros para que você possa usar seus dispositivos sem custo algum. Uma política inclusiva que conecta todos os cidadãos, oferecendo oportunidades iguais de acesso à internet.
             </p>
-            <p style="font-size: 30px; margin: 30px">
+            <p style="font-size: 20px; margin: 20px">
             Visualize os dashboards e se informe dos locais com o sinal de wifi para ter acesso a um mundo de oportunidades !!!!!
             </p>
         </div>
@@ -92,7 +93,7 @@ with aba2:
     quantidade_menos = contagem_fixa.min()
 
     # Exibição lado a lado no Streamlit
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2, col3 = st.columns(3)
 
     with col1:
         st.metric(
@@ -114,8 +115,7 @@ with aba2:
             border=True
         )
 
-    with col4: 
-        st.image("images/amico.png", width=200)  # define o tamanho da imagem em pixels
+    
 
     st.markdown("<hr style='border:2px solid #1f77b4;'>",
     unsafe_allow_html=True)
