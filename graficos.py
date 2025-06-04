@@ -66,7 +66,7 @@ def grafico_mapa(df):
         lat='LATITUDE',
         lon='LONGITUDE',
         zoom=11,
-        height=800,
+        height=500,
         color_discrete_sequence=['black']  # todos os pontos na cor preta
         
     )

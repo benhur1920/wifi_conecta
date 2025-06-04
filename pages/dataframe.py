@@ -1,7 +1,7 @@
 import streamlit as st
 from dataset import df
 from funcoes import limpar_dados
-
+from streamlit_extras.metric_cards import style_metric_cards
 
 
 
@@ -11,8 +11,6 @@ st.markdown(
 )
 
 
-st.markdown("<hr style='border:2px solid #1f77b4;'>",
-    unsafe_allow_html=True)
 
 
 # Corrige tipos e remove NaNs
@@ -27,7 +25,10 @@ with st.expander('Clique para selecionar as colunas  que deseja para download do
         default=list(df.columns)
     )
 
-st.sidebar.title('Filtros')
+st.sidebar.markdown(
+    "<h1 style='color: #0b3d91;'>Filtros</h1>",  # azul escuro
+    unsafe_allow_html=True
+)
 
 # Filtros hierárquicos
 zonas_selecionadas = st.sidebar.multiselect(
@@ -83,4 +84,5 @@ with col1:
             mime='text/csv'
     )
 with col2:
-    st.metric(label="Total de registros filtrados", value=int(contagem.sum()))
+    st.metric(label="Total de pontos de Wifi", value=int(contagem.sum()))
+    #style_metric_cards(background_color="#8fcffa", border_left_color= "#686664", border_color="#000")

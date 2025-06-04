@@ -4,12 +4,6 @@ import streamlit as st
 import re
 
 
-
-
-
-
-
-
 # Verificar os valores únicos da coluna 'bairro'
 bairros_ordenados = df['BAIRRO'].sort_values().unique()
 
